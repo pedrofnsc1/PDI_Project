@@ -22,7 +22,7 @@ function C = erode(im)
 endfunction
 
 
-tic %tic toc padrão, só para verificar o tempo de execução da imagem do banco
+tic %tic toc padrï¿½o, sï¿½ para verificar o tempo de execuï¿½ï¿½o da imagem do banco
 im = imread('C:\Users\pedro\Desktop\projetoPDI\aquisicao\img-27.jpg')
 figure('name','Figura 1 - Imagem Original'), imshow(im);
 toc
@@ -68,7 +68,7 @@ for i = 2 : indicePico2
   endif
 endfor 
  
-%==========| LIMIARIZAÇÃO DA IMAGEM |==========%
+%==========| LIMIARIZAï¿½ï¿½O DA IMAGEM |==========%
 limi = ~(im2>indiceVale);
  
 semFundo = zeros(size(im,1),size(im,2),3, 'uint8');
@@ -76,7 +76,7 @@ semFundo = im.*limi; %para cada elemento(pixel) sera multiplicado o valor corres
  
 imCinza = rgb2gray(semFundo)
  
-%==========| BINARIZAÇÃO DA IMAGEM |==========%
+%==========| BINARIZAï¿½ï¿½O DA IMAGEM |==========%
 imBinaria = zeros(size(semFundo, 1), size(semFundo, 2));
 imBinaria(imCinza>limi) = 1;
 figure('NAME', 'Imagem Binarizada'), imshow(imBinaria);
@@ -85,7 +85,7 @@ figure('NAME', 'Imagem Binarizada'), imshow(imBinaria);
 C = erode(imBinaria);
 figure('name','imagem erodida'), imshow(C);
  
-%==========| ROTULAÇÃO DA IMAGEM |==========%
+%==========| ROTULAï¿½ï¿½O DA IMAGEM |==========%
 [rotulo, num] = bwlabel(C);
 figure('NAME', 'Imagem Rotulada');
 imshow(rotulo, []);
@@ -116,7 +116,7 @@ figure(i);
 imshow(MatrizOrange(:,:,i));
 end
 
-%Guardar cada objeto em uma dimensão da imagem nova 
+%Guardar cada objeto em uma dimensï¿½o da imagem nova 
 corR = zeros(size(vetor,1)-1);
 corG = zeros(size(vetor,1)-1);
 corB = zeros(size(vetor,1)-1);
